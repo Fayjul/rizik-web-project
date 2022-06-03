@@ -49,7 +49,7 @@ function HomeScreen() {
       <Helmet>
         <title>Amazona</title>
       </Helmet>
-      <h1>Featured Products</h1>
+      <h1>Our Products</h1>
 
       <div className="products">
         {loading ? (

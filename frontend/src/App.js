@@ -23,7 +23,7 @@ function App() {
               <LinkContainer to="/">
                 <Navbar.Brand>amazona</Navbar.Brand>
               </LinkContainer>
-              <Nav className="me-auto">
+              <Nav className="me-auto  w-100  justify-content-end">
                 <Link to="/cart" className="nav-link">
                   Cart
                   {cart.cartItems.length > 0 && (
@@ -31,6 +31,9 @@ function App() {
                       {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </Badge>
                   )}
+                </Link>
+                <Link className="nav-link" to="/signin">
+                  Sign In
                 </Link>
               </Nav>
             </Container>
