@@ -21,7 +21,7 @@ function App() {
           <Navbar bg="dark" variant="darkgray">
             <Container>
               <LinkContainer to="/">
-                <Navbar.Brand>amazona</Navbar.Brand>
+                <Navbar.Brand>DARAZ</Navbar.Brand>
               </LinkContainer>
               <Nav className="me-auto  w-100  justify-content-end">
                 <Link to="/cart" className="nav-link">
