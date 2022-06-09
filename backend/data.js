@@ -1,7 +1,23 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'Fayjul',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Nasif',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('12345678'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
+      //_id: '1',
       name: 'Teer 5L',
       slug: 'teer-5l',
       category: 'Oil',
@@ -14,7 +30,7 @@ const data = {
       description: 'high quality oil',
     },
     {
-      _id: '2',
+      //_id: '2',
       name: 'Boshundhara 5L',
       slug: 'boshundhara-5l',
       category: 'Soyabin oil',
@@ -27,7 +43,7 @@ const data = {
       description: 'high quality soyabin',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Fresh 5L',
       slug: 'fresh-5l',
       category: 'soyabin',
@@ -40,7 +56,7 @@ const data = {
       description: 'high quality soyabin product',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'BN-5L',
       slug: 'bd-soyabin',
       category: 'soyabin',
