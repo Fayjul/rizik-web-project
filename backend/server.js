@@ -7,6 +7,7 @@ import productRouter from './routes/productRoutes.js';
 import homeRoutes from './routes/homeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
+import uploadRouter from './routes/uploadRoutes.js';
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.get('/api/keys/paypal', (req, res) => {
 });
 
 app.get('/', homeRoutes);
+app.use('/api/upload', uploadRouter);
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRoutes);
