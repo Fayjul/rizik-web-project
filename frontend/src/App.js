@@ -29,6 +29,7 @@ import DashboardScreen from './screens/DashboardScreen';
 import AdminRoute from './componants/AdminRoute';
 import ProfileScreen from './screens/ProfileScreen';
 import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -166,6 +167,14 @@ function App() {
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/order/:id" element={<OrderScreen />} />
+              <Route
+                path="/admin/product/:id"
+                element={
+                  <AdminRoute>
+                    <ProductEditScreen />
+                  </AdminRoute>
+                }
+              ></Route>
               <Route path="/" element={<HomeScreen />} />
               <Route
                 path="/orderhistory"
