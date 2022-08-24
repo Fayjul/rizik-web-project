@@ -171,6 +171,10 @@ export default function OrderScreen() {
     successDeliver,
   ]);
 
+  function bankButtonHandler() {
+    navigate('/bank');
+  }
+
   async function deliverOrderHandler() {
     try {
       dispatch({ type: 'DELIVER_REQUEST' });
@@ -295,6 +299,19 @@ export default function OrderScreen() {
                 </ListGroup.Item>
                 {!order.isPaid && (
                   <ListGroup.Item>
+                    <br></br>
+                    {
+                      <div className="d-grid">
+                        <Button
+                          type="button"
+                          variant="primary"
+                          onClick={bankButtonHandler}
+                        >
+                          Pay with Bank
+                        </Button>
+                        <br></br>
+                      </div>
+                    }
                     {isPending ? (
                       <LoadingBox />
                     ) : (

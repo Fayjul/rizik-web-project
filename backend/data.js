@@ -7,18 +7,21 @@ const data = {
       email: 'admin@example.com',
       password: bcrypt.hashSync('123456'),
       isAdmin: true,
+      balance: 10000,
     },
     {
       name: 'Nasif',
       email: 'user@example.com',
       password: bcrypt.hashSync('12345678'),
       isAdmin: false,
+      balance: 10000,
     },
     {
       name: 'Adib',
       email: 'adib@example.com',
       password: bcrypt.hashSync('1234567'),
       isAdmin: false,
+      balance: 10000,
     },
   ],
   products: [
