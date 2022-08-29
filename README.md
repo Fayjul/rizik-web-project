@@ -12,9 +12,9 @@ and paste it in backend folder
 
 ## run backend
 
-$ cd backend
-$ npm install
-$ npm start
+$ cd backend \n
+$ npm install \n
+$ npm start \n
 
 ## run frontend
 
