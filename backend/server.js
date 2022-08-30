@@ -8,6 +8,7 @@ import homeRoutes from './routes/homeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import uploadRouter from './routes/uploadRoutes.js';
+import bankRouter from './routes/bankRouter.js';
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRouter);
+app.use('/api/bank', bankRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

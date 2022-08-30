@@ -7,14 +7,14 @@ const data = {
       email: 'admin@example.com',
       password: bcrypt.hashSync('123456'),
       isAdmin: true,
-      balance: 10000,
+      balance: 9000,
     },
     {
       name: 'Nasif',
       email: 'user@example.com',
       password: bcrypt.hashSync('12345678'),
       isAdmin: false,
-      balance: 10000,
+      balance: 7000,
     },
     {
       name: 'Adib',

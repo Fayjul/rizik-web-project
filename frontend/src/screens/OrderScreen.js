@@ -171,8 +171,22 @@ export default function OrderScreen() {
     successDeliver,
   ]);
 
-  function bankButtonHandler() {
-    navigate('/bank');
+  async function bankButtonHandler(data, actions) {
+    try {
+      dispatch({ type: 'PAY_REQUEST' });
+      const { data } = await axios.put(
+        `/api/orders/${order._id}/pay`,
+        {},
+        {
+          headers: { authorization: `Bearer ${userInfo.token}` },
+        }
+      );
+      dispatch({ type: 'PAY_SUCCESS', payload: data });
+      toast.success('Order is paid');
+    } catch (err) {
+      toast.error(getError(err));
+      dispatch({ type: 'PAY_FAIL' });
+    }
   }
 
   async function deliverOrderHandler() {

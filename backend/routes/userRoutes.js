@@ -27,6 +27,7 @@ userRouter.post(
           email: user.email,
           isAdmin: user.isAdmin,
           token: generateToken(user),
+          balance: user.balance,
         });
         return;
       }
@@ -50,6 +51,7 @@ userRouter.post(
       email: user.email,
       isAdmin: user.isAdmin,
       token: generateToken(user),
+      balance: user.balance,
     });
   })
 );
