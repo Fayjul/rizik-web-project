@@ -27,6 +27,7 @@ export default function BankScreen() {
   const { cart, userInfo } = state;
   const [deposite, setDeposite] = useState('');
   const [withdraw, setWithdraw] = useState('');
+  const [bankBalance, setBankBalance] = useState(userInfo.balance);
   const [{ loadingUpdate }, dispatch] = useReducer(reducer, {
     loadingUpdate: false,
   });
@@ -39,6 +40,7 @@ export default function BankScreen() {
     setDeposite('');
     const newBalance = userInfo.balance + amount;
     const userId = userInfo._id;
+    setBankBalance(newBalance);
 
     try {
       const { data } = await axios.put(
@@ -57,7 +59,7 @@ export default function BankScreen() {
       });
       ctxDispatch({ type: 'UPDATE_REQUEST', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
-      toast.success('User updated successfully');
+      toast.success('Deposit successfully');
     } catch (err) {
       dispatch({
         type: 'UPDATE_FAIL',
@@ -84,7 +86,7 @@ export default function BankScreen() {
         <div class="balance status">
           <h5>Balance</h5>
           <h2>
-            $ <span id="currentBalance">{userInfo.balance}</span>{' '}
+            $ <span id="currentBalance">{bankBalance}</span>{' '}
           </h2>
         </div>
       </div>

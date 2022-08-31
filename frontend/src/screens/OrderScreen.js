@@ -170,13 +170,44 @@ export default function OrderScreen() {
     successPay,
     successDeliver,
   ]);
-
+  // async function paymentSystem() {
+  //   console.log(order.totalPrice);
+  // }
+  const paymentSystem = async (e) => {
+    //e.preventDefault();
+    const totalPrice = order.totalPrice;
+    const userId = userInfo._id;
+    try {
+      const { data } = await axios.put(
+        'api/bank/payment',
+        {
+          userId,
+          totalPrice,
+        },
+        {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        }
+      );
+      dispatch({ type: 'PAY_SUCCESS', payload: data });
+    } catch (err) {
+      dispatch({
+        type: 'PAY_FAIL',
+      });
+      toast.error(getError(err));
+    }
+    console.log(totalPrice);
+  };
   async function bankButtonHandler(data, actions) {
+    const totalPrice = order.totalPrice;
+    const userId = userInfo._id;
     try {
       dispatch({ type: 'PAY_REQUEST' });
       const { data } = await axios.put(
         `/api/orders/${order._id}/pay`,
-        {},
+        {
+          totalPrice,
+          userId,
+        },
         {
           headers: { authorization: `Bearer ${userInfo.token}` },
         }
@@ -187,6 +218,7 @@ export default function OrderScreen() {
       toast.error(getError(err));
       dispatch({ type: 'PAY_FAIL' });
     }
+    //paymentSystem();
   }
 
   async function deliverOrderHandler() {

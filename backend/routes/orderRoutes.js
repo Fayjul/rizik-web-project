@@ -124,6 +124,9 @@ orderRouter.put(
   isAuth,
   expressAsyncHandler(async (req, res) => {
     const order = await Order.findById(req.params.id);
+    const user = await User.findById(req.body.userId);
+    const admin = await User.findById('630c152513472284fd356266');
+    console.log(admin.name);
     if (order) {
       order.isPaid = true;
       order.paidAt = Date.now();
@@ -133,7 +136,16 @@ orderRouter.put(
         update_time: req.body.update_time,
         email_address: req.body.email_address,
       };
-
+      if (user) {
+        const newBalance = user.balance - req.body.totalPrice;
+        user.balance = newBalance;
+        const updateUser = await user.save();
+      }
+      if (admin) {
+        const newAdminBalance = admin.balance + req.body.totalPrice;
+        admin.balance = newAdminBalance;
+        const updateAdmin = await admin.save();
+      }
       const updatedOrder = await order.save();
       res.send({ message: 'Order Paid', order: updatedOrder });
     } else {
