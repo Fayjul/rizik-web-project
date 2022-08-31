@@ -101,6 +101,9 @@ function App() {
                       <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Order History</NavDropdown.Item>
                       </LinkContainer>
+                      <LinkContainer to="/bank">
+                        <NavDropdown.Item>Bank Account</NavDropdown.Item>
+                      </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
                         className="dropdown-item"
