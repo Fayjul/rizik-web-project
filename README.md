@@ -41,3 +41,49 @@ To run this project locally, follow these steps:
 ```bash
 $ git clone https://github.com/Fayjul/rizik-web-project.git
 $ cd rizik-web-project
+
+## Configure .env File
+
+To configure the environment file, follow these steps:
+
+1. Copy the `.env` file from the `rizik-web-project` repository.
+
+2. Paste the `.env` file into the `backend` folder of your local project.
+
+This will ensure that your backend server has access to the necessary environment variables.
+
+## Run Backend
+
+To run the backend server, follow these steps:
+
+```bash
+$ cd backend
+$ npm install
+$ npm start
+
+## Run Frontent
+
+Open a new terminal window.:
+
+```bash
+$ cd ../frontend
+$ npm install
+$ npm start
+
+### Database Initialization
+
+If you want to populate the database with initial data:
+
+- You can manually add data.
+- Use the provided initial dataset by visiting this link: [http://localhost:5000/api/seed](http://localhost:5000/api/seed).
+
+Enjoy your shopping experience with Rizik E-commerce! If you have any questions or need assistance, please don't hesitate to contact us.
+
+## Contact
+
+For questions or inquiries, please contact the project maintainer:
+
+- Name: Fayjul Islam
+- Email: fayjul79@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/fayjul/]
+
