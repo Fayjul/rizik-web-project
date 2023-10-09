@@ -56,16 +56,16 @@ This will ensure that your backend server has access to the necessary environmen
 
 To run the backend server, follow these steps:
 
-$ cd backend
-$ npm install
+$ cd backend </br>
+$ npm install</br>
 $ npm start
 
 ## Run Frontent
 
 Open a new terminal window.:
 
-$ cd ../frontend
-$ npm install
+$ cd ../frontend</br>
+$ npm install</br>
 $ npm start
 
 ### Database Initialization
