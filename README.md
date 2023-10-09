@@ -38,7 +38,7 @@ To run this project locally, follow these steps:
 
 ### Clone Repository
 
-```bash
+
 $ git clone https://github.com/Fayjul/rizik-web-project.git
 $ cd rizik-web-project
 
