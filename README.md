@@ -56,7 +56,6 @@ This will ensure that your backend server has access to the necessary environmen
 
 To run the backend server, follow these steps:
 
-```bash
 $ cd backend
 $ npm install
 $ npm start
@@ -65,7 +64,6 @@ $ npm start
 
 Open a new terminal window.:
 
-```bash
 $ cd ../frontend
 $ npm install
 $ npm start
